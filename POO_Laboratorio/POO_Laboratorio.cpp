@@ -123,6 +123,14 @@ int main() {
 		cout << "7. salir" << endl;
 		cout << "ingrese una opcion: ";
 		cin >> opcion;
+
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(10000, '\n');
+			cout << "Opcion no valida, intente de nuevo.\n";
+			continue;
+		}
+
 		switch (opcion) {
 		case 1: agregarproducto(inventario); break;
 		case 2: mostrarinventario(inventario); break;
